@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "configuring pin 9.12 as an output"
+config-pin p9.12 gpio
+echo "configuring pin 8.16 as a pull up input"
+config-pin p8.16 gpio_pu
+echo "done configuring"
+echo "building gpioApp application"
+g++ -Wall AnalogIn.cpp myLED.cpp GPIO.cpp gpioApp.cpp -o gpioApp -pthread
+echo "finished"
